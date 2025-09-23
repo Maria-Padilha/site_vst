@@ -8,9 +8,19 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@mdi/font": "5.9.55",
+    "@tailwindcss/postcss": "^4.1.13",
+    "aos": "^2.3.4",
     "core-js": "^3.8.3",
+    "pinia": "^3.0.3",
+    "postcss": "^8.5.6",
+    "roboto-fontface": "*",
+    "typed.js": "^2.1.0",
     "vue": "^3.2.13",
-    "vue-router": "^4.0.3"
+    "vue-router": "^4.0.3",
+    "vuetify": "^3.10.2",
+    "webfontloader": "^1.0.0",
+    "webpack-plugin-vuetify": "^3.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -22,7 +32,9 @@
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
     "sass": "^1.32.7",
-    "sass-loader": "^12.0.0"
+    "sass-loader": "^12.0.0",
+    "tailwindcss": "^4.1.13",
+    "vue-cli-plugin-vuetify": "~2.5.8"
   },
   "eslintConfig": {
     "root": true,

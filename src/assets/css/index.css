@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+:root {
+    --bg-color: #F8F8F8;
+    --bg-color-secondary: #ffff;
+    --text-color: #000000;
+
+    --color-blue-dark: #142968;
+    --color-blue-medium: #1a3580;
+    --color-blue-light: #1442B2;
+
+    --color-blue-opacity: rgba(155, 193, 255, 0.13);
+}
+
+.body {
+    background: var(--bg-color);
+}
+
+/** ====================== BACKGROUNDS ================== */
+
+.background-secondary {
+    background-color: var(--bg-color-secondary);
+}
+
+.background-navbar {
+    background-color: var(--color-blue-dark);
+}
+
+.background-blue-light {
+    background-color: var(--color-blue-light);
+}
+
+.background-blue-dark {
+    background-color: var(--color-blue-dark);
+}
+
+.background-blue-medium {
+    background-color: var(--color-blue-medium);
+}
+
+.background-blue-opacity {
+    background-color: var(--color-blue-opacity);
+}
+/** ====================== TEXT COLORS ================== */
+
+.text-blue-dark {
+    color: var(--color-blue-dark);
+}
+
+.text-blue-medium {
+    color: var(--color-blue-medium);
+}
+
+.text-blue-light {
+    color: var(--color-blue-light);
+}
