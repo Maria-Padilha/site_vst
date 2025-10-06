@@ -8,7 +8,7 @@ export const useUiStore = defineStore('ui', {
     }),
     actions: {
         handleScroll() {
-            this.top = window.scrollY > 0
+            this.top = window.scrollY > 150
         },
         onResize() {
             this.menu = window.innerWidth <= 837

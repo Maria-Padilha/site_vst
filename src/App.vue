@@ -4,17 +4,44 @@
     <NavBar />
     <v-main class="body">
       <router-view/>
-      <v-fab
-          color="green" location="right bottom"
-          app="fixed" icon
-      >
-        <v-icon size="25px" icon="mdi-whatsapp"/>
-      </v-fab>
+
+      <div class="fab-stack">
+        <v-fab
+            color="gray" v-if="uiStore.top" size="small"
+            icon variant="tonal" href="#home" class="mr-1"
+        >
+          <v-icon size="23px" icon="mdi-chevron-up" />
+        </v-fab>
+
+        <v-fab
+            color="green"
+            icon class="mt-3"
+        >
+          <v-icon size="25px" icon="mdi-whatsapp"/>
+        </v-fab>
+      </div>
     </v-main>
+    <FooterComponent />
   </v-app>
 </template>
 
 <script setup>
 import NavBar from "@/components/base/NavBar.vue";
 import SectionPrincipal from "@/components/SectionPrincipal.vue";
+import FooterComponent from "@/components/base/FooterComponent.vue";
+import {useUiStore} from "@/stores/ui";
+
+const uiStore = useUiStore();
 </script>
+
+<style scoped>
+.fab-stack {
+  position: fixed;
+  right: 25px;
+  bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 100;
+}
+</style>

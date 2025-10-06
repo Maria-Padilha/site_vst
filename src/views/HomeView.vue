@@ -1,7 +1,7 @@
 <template>
   <!-- SESSÃO QUEM SOMOS -->
   <section
-      data-aos="fade-right" data-aos-duration="1200"
+      data-aos="fade-right" data-aos-duration="1200" id="home"
       class="w-[90%] md:w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch"
   >
     <!-- ESQUERDA -->
@@ -93,7 +93,7 @@
     </v-sheet>
   </section>
 
-  <section class="mt-10 w-[90%] md:w-[80%] mx-auto flex flex-col items-center justify-center">
+  <section id="modulos" class="mt-10 w-[90%] md:w-[80%] mx-auto flex flex-col items-center justify-center">
     <h2 data-aos="fade-right" data-aos-duration="1500" class="text-4xl mt-10 font-extrabold text-capitalize text-gray-900 letras-espaco text-center">
       Conheça nossos <span class="text-blue-light">Módulos</span>.
     </h2>
@@ -102,7 +102,7 @@
       de cada cliente, proporcionando uma gestão eficiente e integrada.
     </p>
 
-    <div data-aos="fade-right" data-aos-duration="1500" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 w-full mb-10">
+    <div data-aos="fade-right" data-aos-duration="1500" class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8 w-full mb-10">
       <v-card
           v-for="(modulo, index) in modulos"
           :key="index"
@@ -111,8 +111,8 @@
       >
         <div class="flex flex-col items-center gap-4">
           <!-- Ícone -->
-          <div class="flex items-center justify-center w-[80px] h-[80px] rounded-full bg-blue-600 shadow-md transition-colors duration-300 ease-in-out hover:bg-blue-700">
-            <v-icon :icon="modulo.icon" size="40px" color="white" />
+          <div class="flex items-center justify-center w-[65px] h-[65px] rounded-full background-blue-light shadow-md transition-colors duration-300 ease-in-out hover:background-blue-dark">
+            <v-icon :icon="modulo.icon" size="35px" color="white" />
           </div>
 
           <!-- Título -->
@@ -122,18 +122,16 @@
         </div>
 
         <!-- Descrição -->
-        <p class="mt-3 text-gray-600 leading-relaxed text-center text-base">
+        <p class="mt-3 text-gray-600 leading-relaxed text-center text-base px-10">
           {{ modulo.descricao }}
         </p>
 
         <!-- Botão -->
         <v-card-actions class="justify-center">
           <v-btn
-              class="mt-5 font-semibold px-6 py-3 text-white transition-transform duration-300 ease-in-out hover:scale-105"
-              color="blue-darken-2"
-              rounded="lg"
-              size="large"
-              href="#contato"
+              class="mt-5 font-semibold px-6 py-3 text-none"
+              color="var(--color-blue-medium)"
+              size="large" variant="tonal" :to="`modulo-${modulo.titulo}`"
           >
             Conhecer Módulo
           </v-btn>
@@ -143,7 +141,7 @@
   </section>
 
   <!-- SESSÃO APP MOBILE -->
-  <section class="px-16 background-blue-opacity flex flex-col md:flex-row items-start px-6 pt-10 gap-8">
+  <section id="mobile" class="px-16 background-blue-opacity flex flex-col md:flex-row items-start px-6 pt-10 gap-8">
     <!-- Mockup do App -->
     <v-img
         data-aos="fade-right" data-aos-duration="1500"
@@ -179,11 +177,11 @@
       </div>
 
       <!-- Botões -->
-      <div class="flex items-center gap-4 mt-7 flex-col md:flex-row">
+      <div class="flex items-center gap-4 mt-4 flex-col md:flex-row">
         <v-btn
             color="var(--color-blue-medium)" variant="flat" size="large"
             class="px-6 text-white text-lg text-none flex items-center justify-center w-[100%] md:w-auto"
-            href="#contato" rounded
+            href="#contato"
         >
           <v-icon icon="mdi-google-play" size="30" />
           <div class="ml-3">
@@ -195,7 +193,7 @@
         <v-btn
             color="var(--color-blue-medium)" variant="flat" size="large"
             class="px-6 text-white text-lg text-none flex items-center justify-center w-[100%] md:w-auto"
-            href="#contato" rounded
+            href="#contato"
         >
           <v-icon icon="mdi-apple" size="30" />
           <div class="ml-3">
@@ -208,7 +206,7 @@
   </section>
 
   <!-- SESSÃO SERVIÇOS -->
-  <section class="mt-10 w-[90%] md:w-[80%] mx-auto flex flex-col items-center justify-center">
+  <section id="servicos" class="mt-10 w-[90%] md:w-[80%] mx-auto flex flex-col items-center justify-center">
     <h2 data-aos="fade-right" data-aos-duration="1500" class="text-4xl mt-10 font-extrabold text-capitalize text-gray-900 letras-espaco text-center">
       Conheça nossos <span class="text-blue-light">Serviços</span>.
     </h2>
@@ -246,7 +244,7 @@
 
   <!-- SESSÃO PARCEIROS -->
   <section
-      data-aos="fade-right" data-aos-duration="1200"
+      data-aos="fade-right" data-aos-duration="1200" id="contato"
       class="w-100 background-secondary mt-10 flex items-center flex-col justify-center pa-5 overflow-hidden"
   >
     <div class="flex items-center justify-center gap-5 w-100 text-center">
@@ -318,7 +316,7 @@
   </section>
 
   <!-- Agendamento -->
-  <section data-aos="fade-right" data-aos-duration="1200" class="my-16 background-secondary py-10">
+  <section data-aos="fade-right" data-aos-duration="1200" class="mt-16 background-secondary py-10">
     <div class="w-[92%] md:w-[80%] mx-auto flex flex-col">
       <h2 class="text-4xl font-extrabold text-capitalize text-gray-900 letras-espaco text-center">
         Agende uma <span class="text-blue-light">demonstração</span>
@@ -361,7 +359,7 @@
         <v-btn
             color="var(--color-blue-medium)" variant="flat" size="large"
             class="px-6 text-white text-lg text-none flex items-center justify-center"
-            href="#contato" rounded
+            href="#contato"
         >
           Agendar Demonstração
         </v-btn>
@@ -432,12 +430,12 @@ const beneficios = ref([
 ]);
 
 const modulos = ref([
-  { titulo: 'Estoque', descricao: 'Monitore e controle o estoque em tempo real, evitando faltas ou excessos.', icon: 'mdi-warehouse' },
-  { titulo: 'Financeiro', descricao: 'Controle completo das finanças da sua empresa, desde contas a pagar e receber até fluxo de caixa.', icon: 'mdi-currency-usd' },
-  { titulo: 'Gestão Fiscal', descricao: 'Automatize processos fiscais e garanta conformidade com as regulamentações vigentes.', icon: 'mdi-file-percent' },
-  { titulo: 'Ordem de Produção', descricao: 'Controle e organize todo o processo produtivo da sua empresa.', icon: 'mdi-factory' },
-  { titulo: 'Ordem de Serviço', descricao: 'Gerencie solicitações, execuções e entregas de serviços com eficiência.', icon: 'mdi-clipboard-text-outline' },
   { titulo: 'Vendas', descricao: 'Gerencie todo o processo de vendas, desde o pedido até a entrega ao cliente.', icon: 'mdi-chart-line' },
+  { titulo: 'Financeiro', descricao: 'Controle completo das finanças da sua empresa, desde contas a pagar e receber até fluxo de caixa.', icon: 'mdi-currency-usd' },
+  { titulo: 'Estoque', descricao: 'Monitore e controle o estoque em tempo real, evitando faltas ou excessos.', icon: 'mdi-warehouse' },
+  { titulo: 'Inventário', descricao: 'Automatize processos fiscais e garanta conformidade com as regulamentações vigentes.', icon: 'mdi-file-percent' },
+  // { titulo: 'Ordem de Produção', descricao: 'Controle e organize todo o processo produtivo da sua empresa.', icon: 'mdi-factory' },
+  // { titulo: 'Ordem de Serviço', descricao: 'Gerencie solicitações, execuções e entregas de serviços com eficiência.', icon: 'mdi-clipboard-text-outline' },
 ]);
 
 const cards = ref([

@@ -12,6 +12,10 @@
     --color-blue-opacity: rgba(155, 193, 255, 0.13);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .body {
     background: var(--bg-color);
 }
