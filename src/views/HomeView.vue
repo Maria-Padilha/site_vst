@@ -143,7 +143,7 @@
   </section>
 
   <!-- SESSÃO APP MOBILE -->
-  <section class="px-16 background-blue-opacity flex flex-col md:flex-row items-start px-6 pt-10 rounded-xl gap-8">
+  <section class="px-16 background-blue-opacity flex flex-col md:flex-row items-start px-6 pt-10 gap-8">
     <!-- Mockup do App -->
     <v-img
         data-aos="fade-right" data-aos-duration="1500"
@@ -179,10 +179,10 @@
       </div>
 
       <!-- Botões -->
-      <div class="flex items-center gap-4 mt-7 flex-wrap">
+      <div class="flex items-center gap-4 mt-7 flex-col md:flex-row">
         <v-btn
             color="var(--color-blue-medium)" variant="flat" size="large"
-            class="px-6 text-white text-lg text-none flex items-center justify-center"
+            class="px-6 text-white text-lg text-none flex items-center justify-center w-[100%] md:w-auto"
             href="#contato" rounded
         >
           <v-icon icon="mdi-google-play" size="30" />
@@ -194,7 +194,7 @@
 
         <v-btn
             color="var(--color-blue-medium)" variant="flat" size="large"
-            class="px-6 text-white text-lg text-none flex items-center justify-center"
+            class="px-6 text-white text-lg text-none flex items-center justify-center w-[100%] md:w-auto"
             href="#contato" rounded
         >
           <v-icon icon="mdi-apple" size="30" />
@@ -277,6 +277,97 @@
   </section>
 
   <!-- SESSÃO CONTATO -->
+  <section
+      data-aos="fade-right" data-aos-duration="1200"
+      class="mt-16 w-[92%] md:w-[80%] mx-auto flex flex-col lg:flex-row items-start gap-x-12 gap-y-5">
+    <!-- Título + barra -->
+    <div class="flex items-stretch gap-8">
+      <div class="w-[5px] background-blue-light rounded-full opacity-30" />
+      <div>
+        <h2 class="text-4xl letras-espaco font-extrabold">Fale</h2>
+        <h2 class="text-4xl letras-espaco font-extrabold text-blue-light">Conosco</h2>
+      </div>
+    </div>
+
+    <!-- Texto + chips -->
+    <div class="w-100">
+      <p class="text-lg text-slate-800">
+        Conheça o <strong>VST</strong>, Sistema integrado de Gestão Empresarial. Com o VST, você administra a sua
+        empresa de modo prático, seguro e produtivo — inclusive pela internet, multi-empresa, multi-filial e multi-usuários.
+      </p>
+
+      <!-- Chips -->
+      <div class="mt-6 flex flex-wrap items-center md:justify-center gap-2">
+        <v-chip
+            v-for="(chip, index) in chips"
+            :key="index"
+            :prepend-icon="chip.icon"
+            class="chip transition-all duration-300"
+            :variant="hover[index] ? 'tonal' : 'outlined'"
+            rounded
+            size="large"
+            :ripple="false"
+            :color="hover[index] ? 'var(--color-blue-light)' : 'gray'"
+            @mouseenter="hover[index] = true"
+            @mouseleave="hover[index] = false"
+        >
+          {{ chip.text }}
+        </v-chip>
+      </div>
+    </div>
+  </section>
+
+  <!-- Agendamento -->
+  <section data-aos="fade-right" data-aos-duration="1200" class="my-16 background-secondary py-10">
+    <div class="w-[92%] md:w-[80%] mx-auto flex flex-col">
+      <h2 class="text-4xl font-extrabold text-capitalize text-gray-900 letras-espaco text-center">
+        Agende uma <span class="text-blue-light">demonstração</span>
+      </h2>
+      <p class="mt-4 text-gray-600 text-center max-w-3xl mx-auto">
+        Entre em contato conosco para agendar uma demonstração personalizada do
+        nosso sistema ERP. Descubra como nossas soluções podem transformar a
+        gestão da sua empresa.
+      </p>
+
+      <v-form ref="formRef" class="my-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 items-start gap-4">
+          <!-- Campos de texto -->
+          <v-text-field
+              v-for="(form, index) in forms"
+              :key="index"
+              variant="outlined"
+              :label="form.label"
+              :type="form.type"
+              :required="form.required"
+              hide-details="auto"
+              :prepend-inner-icon="form.icon"
+              :rules="[v => !!v || `${form.label} é obrigatório`]">
+          </v-text-field>
+
+          <!-- Select -->
+          <v-select
+              variant="outlined"
+              label="Segmento"
+              prepend-inner-icon="mdi-domain"
+              hide-details="auto"
+              :items="['Distribuição', 'Indústria', 'Serviços', 'Comércio', 'Loja']"
+              :rules="[v => !!v || 'Segmento é obrigatório']"
+              required>
+          </v-select>
+        </div>
+      </v-form>
+
+      <div class="flex justify-center">
+        <v-btn
+            color="var(--color-blue-medium)" variant="flat" size="large"
+            class="px-6 text-white text-lg text-none flex items-center justify-center"
+            href="#contato" rounded
+        >
+          Agendar Demonstração
+        </v-btn>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script setup>
@@ -381,9 +472,37 @@ const cards = ref([
     desc: "Realizamos a migração segura e eficiente dos seus dados de um sistema para outro, garantindo a integridade e a consistência das informações. Simplifique o processo e evite perdas de dados."
   }
 ]);
+
+const chips = ref([
+  { icon: 'mdi-account', text: 'Comercial: (65) 99684-8782' },
+  { icon: 'mdi-cog', text: 'Suporte: (65) 3021-2500' },
+  { icon: 'mdi-email', text: 'comercial@vstsolution.com.br' },
+  { icon: 'mdi-map-marker', text: 'Rua  João Batista de Oliveira, 367 – Vista Alegre, Cuiabá – MT, 78085-712' }
+]);
+
+const forms = ref([
+  { name: 'nome', label: 'Nome', type: 'text', required: true, icon: 'mdi-account' },
+  { name: 'empresa', label: 'Empresa', type: 'text', required: true, icon: 'mdi-domain' },
+  { name: 'email', label: 'Email', type: 'email', required: true, icon: 'mdi-email' },
+  { name: 'telefone', label: 'Telefone', type: 'phone', required: false, icon: 'mdi-phone' },
+]);
+
+const hover = ref(Array(chips.length).fill(false));
+
 </script>
 
 <style scoped>
+
+.chip {
+  transition: all 0.3s ease !important;
+}
+.chip:hover {
+  transform: translateY(-2px);
+  border: 1px solid var(--color-blue-light) !important;
+  box-shadow: 0 6px 16px rgba(30, 64, 175, 0.15);
+}
+
+
 .letras-espaco {
   letter-spacing: 7px;
 }
