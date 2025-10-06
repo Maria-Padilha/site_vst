@@ -487,7 +487,7 @@ const forms = ref([
   { name: 'telefone', label: 'Telefone', type: 'phone', required: false, icon: 'mdi-phone' },
 ]);
 
-const hover = ref(Array(chips.length).fill(false));
+const hover = ref(Array(chips.value.length).fill(false));
 
 </script>
 
