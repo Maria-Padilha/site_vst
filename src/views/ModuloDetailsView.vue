@@ -5,7 +5,8 @@
           class="w-[90%] rounded-sm mx-auto"
           :class="modulo !== 'inventário' ? 'md:w-[75%]' : 'md:w-[65%]'"
           :src="require(`@/assets/img/modulos/${modulo}.png`)"
-          :lazy-src="require('@/assets/img/foto-6.png')"
+          :lazy-src="require(`@/assets/img/modulos/${modulo}.png`)"
+          :alt="`Imagem do módulo ${modulo}`"
       >
         <template v-slot:placeholder><lazy-image /></template>
       </v-img>
