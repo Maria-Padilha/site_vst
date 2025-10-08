@@ -3,7 +3,7 @@
     <v-sheet data-aos="fade-right" data-aos-duration="1200" class="w-[100%] pt-9 background-blue-opacity rounded-lg">
       <v-img
           class="w-[90%] rounded-sm mx-auto"
-          :class="modulo !== 'inventário' ? 'md:w-[75%]' : 'md:w-[65%]'"
+          :class="modulo !== 'inventário' ? 'md:w-[75%]' : 'md:w-[65%] pb-3'"
           :src="require(`@/assets/img/modulos/${modulo}.png`)"
           :lazy-src="require(`@/assets/img/modulos/${modulo}.png`)"
           :alt="`Imagem do módulo ${modulo}`"
