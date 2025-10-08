@@ -7,6 +7,11 @@ const routes = [
     name: 'home',
     component: HomeView
   },
+  {
+    path: '/modulo/:modulo',
+    name: 'modulo-details',
+    component: () => import(/* webpackChunkName: "modulo-details" */ '../views/ModuloDetailsView.vue')
+  },
 ]
 
 const router = createRouter({

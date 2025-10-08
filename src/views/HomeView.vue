@@ -116,7 +116,7 @@
           </div>
 
           <!-- Título -->
-          <h3 class="font-bold text-gray-900 text-xl text-center tracking-wide">
+          <h3 class="font-bold text-gray-900 text-xl text-center text-capitalize tracking-wide">
             {{ modulo.titulo }}
           </h3>
         </div>
@@ -131,7 +131,7 @@
           <v-btn
               class="mt-5 font-semibold px-6 py-3 text-none"
               color="var(--color-blue-medium)"
-              size="large" variant="tonal" :to="`modulo-${modulo.titulo}`"
+              size="large" variant="tonal" :to="`modulo/${modulo.titulo}`"
           >
             Conhecer Módulo
           </v-btn>
@@ -430,10 +430,10 @@ const beneficios = ref([
 ]);
 
 const modulos = ref([
-  { titulo: 'Vendas', descricao: 'Gerencie todo o processo de vendas, desde o pedido até a entrega ao cliente.', icon: 'mdi-chart-line' },
-  { titulo: 'Financeiro', descricao: 'Controle completo das finanças da sua empresa, desde contas a pagar e receber até fluxo de caixa.', icon: 'mdi-currency-usd' },
-  { titulo: 'Estoque', descricao: 'Monitore e controle o estoque em tempo real, evitando faltas ou excessos.', icon: 'mdi-warehouse' },
-  { titulo: 'Inventário', descricao: 'Automatize processos fiscais e garanta conformidade com as regulamentações vigentes.', icon: 'mdi-file-percent' },
+  { titulo: 'vendas', descricao: 'Gerencie todo o processo de vendas, desde o pedido até a entrega ao cliente.', icon: 'mdi-chart-line' },
+  { titulo: 'financeiro', descricao: 'Controle completo das finanças da sua empresa, desde contas a pagar e receber até fluxo de caixa.', icon: 'mdi-currency-usd' },
+  { titulo: 'estoque', descricao: 'Monitore e controle o estoque em tempo real, evitando faltas ou excessos.', icon: 'mdi-warehouse' },
+  { titulo: 'inventário', descricao: 'Automatize processos fiscais e garanta conformidade com as regulamentações vigentes.', icon: 'mdi-file-percent' },
   // { titulo: 'Ordem de Produção', descricao: 'Controle e organize todo o processo produtivo da sua empresa.', icon: 'mdi-factory' },
   // { titulo: 'Ordem de Serviço', descricao: 'Gerencie solicitações, execuções e entregas de serviços com eficiência.', icon: 'mdi-clipboard-text-outline' },
 ]);
@@ -500,11 +500,6 @@ const hover = ref(Array(chips.value.length).fill(false));
   box-shadow: 0 6px 16px rgba(30, 64, 175, 0.15);
 }
 
-
-.letras-espaco {
-  letter-spacing: 7px;
-}
-
 @keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -513,19 +508,6 @@ const hover = ref(Array(chips.value.length).fill(false));
 .animate-scroll {
   animation: scroll 90s linear infinite;
   width: max-content; /* largura só do conteúdo */
-}
-
-.card-custom {
-  border-radius: 1rem;
-  padding: 1.5rem;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  transition: transform 0.7s ease, box-shadow 0.7s ease;
-}
-.card-custom:hover {
-  transform: scale(1.05) translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-  transition: transform 0.7s ease, box-shadow 0.7s ease;
 }
 
 .card-custom-2 {

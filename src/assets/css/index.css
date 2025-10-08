@@ -45,6 +45,7 @@ html {
 .background-blue-opacity {
     background-color: var(--color-blue-opacity);
 }
+
 /** ====================== TEXT COLORS ================== */
 
 .text-blue-dark {
@@ -57,4 +58,23 @@ html {
 
 .text-blue-light {
     color: var(--color-blue-light);
+}
+
+/** ====================== COMPONENTES ================== */
+
+.letras-espaco {
+    letter-spacing: 7px;
+}
+
+.card-custom {
+    border-radius: 1rem;
+    padding: 1.5rem;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.7s ease, box-shadow 0.7s ease;
+}
+.card-custom:hover {
+    transform: scale(1.05) translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    transition: transform 0.7s ease, box-shadow 0.7s ease;
 }

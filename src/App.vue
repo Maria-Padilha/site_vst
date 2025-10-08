@@ -7,7 +7,7 @@
 
       <div class="fab-stack">
         <v-fab
-            color="gray" v-if="uiStore.top" size="small"
+            color="gray" v-if="uiStore.top && $route.path === '/'" size="small"
             icon variant="tonal" href="#home" class="mr-1"
         >
           <v-icon size="23px" icon="mdi-chevron-up" />
@@ -16,6 +16,7 @@
         <v-fab
             color="green"
             icon class="mt-3"
+            @click="openWpp"
         >
           <v-icon size="25px" icon="mdi-whatsapp"/>
         </v-fab>
@@ -32,6 +33,10 @@ import FooterComponent from "@/components/base/FooterComponent.vue";
 import {useUiStore} from "@/stores/ui";
 
 const uiStore = useUiStore();
+
+const openWpp = () => {
+  window.open('https://api.whatsapp.com/send?phone=5565996848782&text=Quero%20uma%20apresenta%C3%A7%C3%A3o%20do%20sistema', '_blank');
+}
 </script>
 
 <style scoped>
