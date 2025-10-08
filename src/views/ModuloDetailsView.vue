@@ -1,7 +1,12 @@
 <template>
   <section class="">
     <v-sheet data-aos="fade-right" data-aos-duration="1200" class="w-[100%] pt-9 background-blue-opacity rounded-lg">
-      <v-img class="md:w-[75%] w-[90%] rounded-sm mx-auto" :src="require('@/assets/img/foto-6.png')" :lazy-src="require('@/assets/img/foto-6.png')">
+      <v-img
+          class="w-[90%] rounded-sm mx-auto"
+          :class="modulo !== 'inventário' ? 'md:w-[75%]' : 'md:w-[65%]'"
+          :src="require(`@/assets/img/modulos/${modulo}.png`)"
+          :lazy-src="require('@/assets/img/foto-6.png')"
+      >
         <template v-slot:placeholder><lazy-image /></template>
       </v-img>
     </v-sheet>
@@ -40,6 +45,15 @@
         <h3 class="mt-4 font-semibold text-gray-900">{{ caracteristica }}</h3>
       </v-card>
     </div>
+
+    <div class="mt-10 flex items-center justify-end gap-6 flex-wrap">
+      <router-link
+          :to="`/modulo/${modulo.id}`" v-for="(modulo, index) in modulos" :key="index"
+          class="link"
+      >
+        Módulo {{modulo.nome}}
+      </router-link>
+    </div>
   </section>
 </template>
 
@@ -49,7 +63,7 @@ import { ref, computed } from 'vue';
 import LazyImage from "@/components/layout/LazyImage.vue";
 
 const route = useRoute();
-const modulo = ref(route.params.modulo || 'Desconhecido');
+const modulo = computed(() => route.params.modulo || 'Desconhecido');
 
 const modulosDetalhes = ref({
   'vendas': {
@@ -98,20 +112,22 @@ const modulosDetalhes = ref({
   'inventário': {
     nome: 'Inventário',
     descricao: 'O módulo de inventário é uma ferramenta essencial para empresas que desejam gerenciar seus estoques de forma eficiente. ' +
-        'Com ele, é possível controlar a entrada e saída de produtos, monitorar níveis de estoque, realizar inventários periódicos e gerar ' +
-        'relatórios detalhados sobre o desempenho do estoque.\n \n' +
-        'Além disso, o módulo de inventário pode ser integrado com outros sistemas da empresa, como o sistema de vendas e o sistema financeiro,' +
-        ' permitindo uma gestão mais completa e integrada dos processos empresariais.\n \n' +
-        'Com o módulo de inventário, as empresas podem reduzir custos, melhorar a eficiência operacional e aumentar a satisfação dos ' +
-        'clientes, garantindo que os produtos estejam sempre disponíveis quando necessários.',
+        'Faça a contagem dos seus itens em estoque de forma rápida e prática, seja manualmente, via mobile ou com coletor de dados, através da IA de contagem de itens. \n \n' +
+        'Com o módulo de inventário, você pode:\n \n' +
+        'Selecionar o item que será contado; \n' +
+        'Realizar a contagem através da IA; \n' +
+        'Definir a quantidade correta do item; \n' +
+        'Registrar a contagem no sistema; \n' +
+        'Analisar o Progresso da contagem. \n \n' ,
     caracteristicas: [
-        'Inventário de produtos manual, mobile, coletor de dados',
-        'Transferência de mercadorias entre almoxarifados',
-        'Kardex - Registro de entrada / saída de mercadorias',
-        'Custo médio de mercadoria',
-        'Etiqueta de produtos',
-        'Posição de estoque',
-        'Grade de produtos'
+        'Contagem manual',
+        'Contagem via imagem',
+        'Contagem via coletor de dados',
+        'Relatórios de divergência',
+        'Relatórios de contagem',
+        'Ajuste de inventário automático',
+        'Inventário rotativo',
+        'Inventário cíclico'
     ]
   },
 
@@ -148,6 +164,13 @@ const modulosDetalhes = ref({
   },
 })
 
+const modulos = ref([
+  { nome: 'Vendas', id: 'vendas' },
+  { nome: 'Financeiro', id: 'financeiro' },
+  { nome: 'Inventário', id: 'inventário' },
+  { nome: 'Estoque', id: 'estoque' },
+]);
+
 const icons = ref({
   vendas: 'mdi-sale',
   financeiro: 'mdi-cash-multiple',
@@ -173,3 +196,20 @@ const displayedText = computed(() => {
 })
 
 </script>
+
+<style scoped>
+.link {
+  color: gray;
+  text-decoration: none;
+  transition: all .2s ease-in-out;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.link:hover {
+  text-decoration: underline;
+  color: var(--color-blue-light);
+  font-weight: 700;
+  transition: all .2s ease-in-out;
+}
+</style>
