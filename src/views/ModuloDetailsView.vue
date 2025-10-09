@@ -47,13 +47,14 @@
       </v-card>
     </div>
 
-    <div class="mt-10 flex items-center justify-end gap-6 flex-wrap">
-      <router-link
+    <div class="mt-10 flex items-center justify-end gap-4 flex-wrap">
+      <v-btn
           :to="`/modulo/${modulo.id}`" v-for="(modulo, index) in modulos" :key="index"
-          class="link"
+          variant="text" color="var(--color-blue-light)" class="font-semibold text-none"
+          :prepend-icon="icons[modulo.id]"
       >
         Módulo {{modulo.nome}}
-      </router-link>
+      </v-btn>
     </div>
   </section>
 </template>
