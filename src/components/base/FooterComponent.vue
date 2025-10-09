@@ -9,6 +9,6 @@
 <!--      </v-sheet>-->
 <!--    </router-link>-->
 
-    <p class="text-sm font-semibold">VST Solution | &copy; Todos os direitos reservados</p>
+    <p class="text-sm font-semibold">VST Solution | {{ new Date().getFullYear() }} - &copy; Todos os direitos reservados</p>
   </section>
 </template>
