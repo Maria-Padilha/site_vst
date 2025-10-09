@@ -15,7 +15,7 @@
 
   <section class="background-secondary py-10">
     <div class="w-[90%] md:w-[70%] mx-auto flex flex-col items-center justify-center">
-      <h1 class="text-4xl font-extrabold letras-espaco">Módulo <span class="text-blue-light">{{modulosDetalhes[modulo]?.nome}}</span></h1>
+      <h1 class="text-4xl font-extrabold letras-espaco text-center">Módulo <span class="text-blue-light">{{modulosDetalhes[modulo]?.nome}}</span></h1>
 
       <p
           v-html="displayedText"

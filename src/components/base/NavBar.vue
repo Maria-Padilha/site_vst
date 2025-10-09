@@ -37,7 +37,7 @@
     <v-sheet v-if="uiStore.drawer" width="100%" height="100%"  class="d-flex padding-bottom flex-column absolute z-10 px-10 py-10 bg-transparent">
       <div class="h-[550px] flex flex-col items-center justify-center texto-color-primary">
         <v-btn
-            v-for="(link, index) in links" :key="index" variant="text"
+            v-for="(link, index) in links" :key="index" variant="text" size="x-large"
             @click="goToSection(link.route)" class="text-none my-3">{{ link.name }}
         </v-btn>
       </div>
