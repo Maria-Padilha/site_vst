@@ -1,6 +1,6 @@
 <template>
-  <section class="">
-    <v-sheet data-aos="fade-right" data-aos-duration="1200" class="w-[100%] pt-9 background-blue-opacity rounded-lg">
+  <section class="w-[100%] pt-10 background-blue-opacity">
+    <v-sheet data-aos="fade-right" data-aos-duration="1200" class="bg-transparent">
       <v-img
           class="w-[90%] rounded-sm mx-auto"
           :class="modulo !== 'inventário' ? 'md:w-[75%]' : 'md:w-[65%] pb-3'"
@@ -34,7 +34,7 @@
     </div>
   </section>
 
-  <section class="mt-10 w-[90%] md:w-[80%] mx-auto flex flex-col items-center justify-center pb-10">
+  <section class="mt-10 w-[90%] md:w-[80%] mx-auto flex flex-col items-center justify-center">
     <h2 class="text-4xl font-extrabold letras-espaco text-center">Características do <span class="text-blue-light">Módulo</span></h2>
 
     <div class="grid grid-cols-2 lg:grid-cols-4 items-stretch gap-3 mt-10">

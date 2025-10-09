@@ -2,7 +2,7 @@
   <!-- SESSÃO QUEM SOMOS -->
   <section
       data-aos="fade-right" data-aos-duration="1200" id="home"
-      class="w-[90%] md:w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch"
+      class="w-[90%] md:w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch"
   >
     <!-- ESQUERDA -->
     <div>
@@ -102,7 +102,7 @@
       de cada cliente, proporcionando uma gestão eficiente e integrada.
     </p>
 
-    <div data-aos="fade-right" data-aos-duration="1500" class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8 w-full mb-10">
+    <div data-aos="fade-right" data-aos-duration="1500" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 w-full mb-10">
       <v-card
           v-for="(modulo, index) in modulos"
           :key="index"
@@ -141,7 +141,7 @@
   </section>
 
   <!-- SESSÃO APP MOBILE -->
-  <section id="mobile" class="px-16 background-blue-opacity flex flex-col md:flex-row items-start px-6 pt-10 gap-8">
+  <section id="mobile" class="px-16 background-blue-opacity flex flex-col md:flex-row items-start px-6 pt-10 gap-10">
     <!-- Mockup do App -->
     <v-img
         data-aos="fade-right" data-aos-duration="1500"
@@ -163,7 +163,7 @@
       </h2>
 
       <!-- Cards de Benefícios -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-8">
         <!-- Card -->
         <v-card
             v-for="(beneficio, i) in beneficios" :key="i"
@@ -215,7 +215,7 @@
       empresa aproveite ao máximo nossas soluções de ERP.
     </p>
 
-    <div data-aos="fade-right" data-aos-duration="1500" class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+    <div data-aos="fade-right" data-aos-duration="1500" class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
       <v-card
           v-for="(card, i) in cards"
           :key="i"
@@ -247,7 +247,7 @@
       data-aos="fade-right" data-aos-duration="1200" id="contato"
       class="w-100 background-secondary mt-10 flex items-center flex-col justify-center pa-5 overflow-hidden"
   >
-    <div class="flex items-center justify-center gap-5 w-100 text-center">
+    <div class="flex items-center justify-center gap-4 w-100 text-center">
       <div class="w-[15%] h-[2px] background-blue-dark rounded-full opacity-30" />
       <p class="text-lg opacity-90">Utilizada por empresas de todos os segmentos e tamanhos</p>
       <div class="w-[15%] h-[2px] background-blue-dark rounded-full opacity-30" />
@@ -255,9 +255,7 @@
 
     <div class="relative overflow-hidden mt-10">
       <!-- faixa rolando -->
-      <div
-          class="flex animate-scroll gap-16 items-center"
-      >
+      <div class="flex animate-scroll gap-16 items-center">
         <!-- Repete os logos -->
         <img v-for="(logo, i) in logos" :key="i"
              :src="logo"
@@ -277,9 +275,9 @@
   <!-- SESSÃO CONTATO -->
   <section
       data-aos="fade-right" data-aos-duration="1200"
-      class="mt-16 w-[92%] md:w-[80%] mx-auto flex flex-col lg:flex-row items-start gap-x-12 gap-y-5">
+      class="mt-16 w-[92%] md:w-[80%] mx-auto flex flex-col lg:flex-row items-start gap-x-10 gap-y-4">
     <!-- Título + barra -->
-    <div class="flex items-stretch gap-8">
+    <div class="flex items-stretch gap-4">
       <div class="w-[5px] background-blue-light rounded-full opacity-30" />
       <div>
         <h2 class="text-4xl letras-espaco font-extrabold">Fale</h2>
@@ -295,7 +293,7 @@
       </p>
 
       <!-- Chips -->
-      <div class="mt-6 flex flex-wrap items-center md:justify-center gap-2">
+      <div class="mt-6 flex flex-wrap items-center md:justify-center gap-4">
         <v-chip
             v-for="(chip, index) in chips"
             :key="index"
@@ -316,56 +314,56 @@
   </section>
 
   <!-- Agendamento -->
-  <section data-aos="fade-right" data-aos-duration="1200" class="mt-16 background-secondary py-10">
-    <div class="w-[92%] md:w-[80%] mx-auto flex flex-col">
-      <h2 class="text-4xl font-extrabold text-capitalize text-gray-900 letras-espaco text-center">
-        Agende uma <span class="text-blue-light">demonstração</span>
-      </h2>
-      <p class="mt-4 text-gray-600 text-center max-w-3xl mx-auto">
-        Entre em contato conosco para agendar uma demonstração personalizada do
-        nosso sistema ERP. Descubra como nossas soluções podem transformar a
-        gestão da sua empresa.
-      </p>
+<!--  <section data-aos="fade-right" data-aos-duration="1200" class="mt-16 background-secondary py-10">-->
+<!--    <div class="w-[92%] md:w-[80%] mx-auto flex flex-col">-->
+<!--      <h2 class="text-4xl font-extrabold text-capitalize text-gray-900 letras-espaco text-center">-->
+<!--        Agende uma <span class="text-blue-light">demonstração</span>-->
+<!--      </h2>-->
+<!--      <p class="mt-4 text-gray-600 text-center max-w-3xl mx-auto">-->
+<!--        Entre em contato conosco para agendar uma demonstração personalizada do-->
+<!--        nosso sistema ERP. Descubra como nossas soluções podem transformar a-->
+<!--        gestão da sua empresa.-->
+<!--      </p>-->
 
-      <v-form ref="formRef" class="my-10">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 items-start gap-4">
-          <!-- Campos de texto -->
-          <v-text-field
-              v-for="(form, index) in forms"
-              :key="index"
-              variant="outlined"
-              :label="form.label"
-              :type="form.type"
-              :required="form.required"
-              hide-details="auto"
-              :prepend-inner-icon="form.icon"
-              :rules="[v => !!v || `${form.label} é obrigatório`]">
-          </v-text-field>
+<!--      <v-form ref="formRef" class="my-10">-->
+<!--        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 items-start gap-4">-->
+<!--          &lt;!&ndash; Campos de texto &ndash;&gt;-->
+<!--          <v-text-field-->
+<!--              v-for="(form, index) in forms"-->
+<!--              :key="index"-->
+<!--              variant="outlined"-->
+<!--              :label="form.label"-->
+<!--              :type="form.type"-->
+<!--              :required="form.required"-->
+<!--              hide-details="auto"-->
+<!--              :prepend-inner-icon="form.icon"-->
+<!--              :rules="[v => !!v || `${form.label} é obrigatório`]">-->
+<!--          </v-text-field>-->
 
-          <!-- Select -->
-          <v-select
-              variant="outlined"
-              label="Segmento"
-              prepend-inner-icon="mdi-domain"
-              hide-details="auto"
-              :items="['Distribuição', 'Indústria', 'Serviços', 'Comércio', 'Loja']"
-              :rules="[v => !!v || 'Segmento é obrigatório']"
-              required>
-          </v-select>
-        </div>
-      </v-form>
+<!--          &lt;!&ndash; Select &ndash;&gt;-->
+<!--          <v-select-->
+<!--              variant="outlined"-->
+<!--              label="Segmento"-->
+<!--              prepend-inner-icon="mdi-domain"-->
+<!--              hide-details="auto"-->
+<!--              :items="['Distribuição', 'Indústria', 'Serviços', 'Comércio', 'Loja']"-->
+<!--              :rules="[v => !!v || 'Segmento é obrigatório']"-->
+<!--              required>-->
+<!--          </v-select>-->
+<!--        </div>-->
+<!--      </v-form>-->
 
-      <div class="flex justify-center">
-        <v-btn
-            color="var(--color-blue-medium)" variant="flat" size="large"
-            class="px-6 text-white text-lg text-none flex items-center justify-center"
-            href="#contato"
-        >
-          Agendar Demonstração
-        </v-btn>
-      </div>
-    </div>
-  </section>
+<!--      <div class="flex justify-center">-->
+<!--        <v-btn-->
+<!--            color="var(&#45;&#45;color-blue-medium)" variant="flat" size="large"-->
+<!--            class="px-6 text-white text-lg text-none flex items-center justify-center"-->
+<!--            href="#contato"-->
+<!--        >-->
+<!--          Agendar Demonstração-->
+<!--        </v-btn>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </section>-->
 </template>
 
 <script setup>
@@ -478,12 +476,12 @@ const chips = ref([
   { icon: 'mdi-map-marker', text: 'Rua  João Batista de Oliveira, 367 – Vista Alegre, Cuiabá – MT, 78085-712' }
 ]);
 
-const forms = ref([
-  { name: 'nome', label: 'Nome', type: 'text', required: true, icon: 'mdi-account' },
-  { name: 'empresa', label: 'Empresa', type: 'text', required: true, icon: 'mdi-domain' },
-  { name: 'email', label: 'Email', type: 'email', required: true, icon: 'mdi-email' },
-  { name: 'telefone', label: 'Telefone', type: 'phone', required: false, icon: 'mdi-phone' },
-]);
+// const forms = ref([
+//   { name: 'nome', label: 'Nome', type: 'text', required: true, icon: 'mdi-account' },
+//   { name: 'empresa', label: 'Empresa', type: 'text', required: true, icon: 'mdi-domain' },
+//   { name: 'email', label: 'Email', type: 'email', required: true, icon: 'mdi-email' },
+//   { name: 'telefone', label: 'Telefone', type: 'phone', required: false, icon: 'mdi-phone' },
+// ]);
 
 const hover = ref(Array(chips.value.length).fill(false));
 

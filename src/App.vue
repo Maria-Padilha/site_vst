@@ -2,7 +2,7 @@
   <v-app>
     <section-principal v-if="$route.path === '/'" />
     <NavBar />
-    <v-main class="body">
+    <v-main class="body pb-10">
       <router-view/>
 
       <div class="fab-stack">
